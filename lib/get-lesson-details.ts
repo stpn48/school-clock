@@ -34,6 +34,7 @@ export function getLessonDetails(): LessonDetails | null {
     // Check if the current time is during a lesson
     if (nowMs > lessonStartMs && nowMs < lessonEndMs) {
       const timeLeftMs = lessonEndMs - nowMs;
+
       return {
         type: "lesson",
         lessonNumber: lessons[i].lessonNumber,
@@ -52,6 +53,7 @@ export function getLessonDetails(): LessonDetails | null {
 
       if (nowMs > breakStartMs && nowMs < breakEndMs) {
         const timeLeftMs = breakEndMs - nowMs;
+
         return {
           type: "break",
           lessonNumber: i + 1,
