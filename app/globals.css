@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 95%; /* Light Gray */
+    --background: 0 0% 0%; /* Light Gray */
     --foreground: 0 0% 0%; /* Black */
     --primary: 0 0% 0%; /* Black */
     --border: 0 0% 85%; /* Light Border Gray */
@@ -13,20 +13,11 @@
   }
 
   .dark {
-    --background: 0 0% 5%; /* Dark Gray */
-    --foreground: 0 0% 15%; /* Darker Gray */
+    --background: 0 0% 0%; /* Dark Gray */
+    --foreground: 0 0% 0%; /* Darker Gray */
     --primary: 0 0% 100%; /* White */
     --border: 0 0% 11%; /* Dark Border Gray */
     --border-foreground: 0 0% 19%; /* Medium Dark Gray */
     --secondary: 0 0% 13%; /* Slightly Darker Gray */
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
