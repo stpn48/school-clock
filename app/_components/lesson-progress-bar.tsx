@@ -15,7 +15,7 @@ export function LessonProgressBar({ timeLeftMs }: Props) {
 
   return (
     <div className="absolute bottom-0 h-[3px] w-screen bg-secondary">
-      <div style={{ width: `${progress}%` }} className="bg-primary-foreground h-full rounded-md" />
+      <div style={{ width: `${progress}%` }} className="h-full rounded-md bg-primary-foreground" />
     </div>
   );
 }
