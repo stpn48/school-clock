@@ -18,7 +18,7 @@ const lessons = [
 
 // null if not in school time
 export function getLessonDetails(): LessonDetails | null {
-  const nowMs = getTimestamp(8, 10); // TODO: Remove this currently simulating time
+  const nowMs = new Date().getTime(); // TODO: Remove this currently simulating time
 
   // beyond school time
   const lastLessonEndMs = getTimestamp(16, 0);
