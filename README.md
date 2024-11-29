@@ -3,3 +3,4 @@
 [] - make settings work
 [] - add no school on weekends
 [] - implement the progress bars variants (as background, inside the text, and on the bottom)
+[] - don't show confetti when break ends
