@@ -14,18 +14,18 @@ import { AppearanceSection } from "../config-dialog/appearance-section/appearanc
 export function SettingsDialog() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DialogTrigger asChild>
               <Settings className="size-4 cursor-pointer text-foreground" />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Settings</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </DialogTrigger>
+            </DialogTrigger>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Settings</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
       <DialogContent className="flex h-[75%] flex-col gap-4">
         <DialogHeader>
