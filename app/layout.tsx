@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Providers } from "../components/providers";
 import { ConfigDialog } from "./_components/config-dialog/config-dialog";
 import { SyncConfigWithLocalStorage } from "./_components/config-dialog/sync-config";
+import { Header } from "./_components/header/header";
 import "./globals.css";
 
 const helveticaNeueLtStd = localFont({
@@ -38,8 +39,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${helveticaNeueLtStd.variable} font-geist-sans font-medium ${geistMono.variable} antialiased`}
       >
         <Providers>
+          <Header />
           {children}
-          <ConfigDialog />
           <SyncConfigWithLocalStorage />
         </Providers>
       </body>
