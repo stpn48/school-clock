@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
 import { ConfigDialog } from "./_components/config-dialog/config-dialog";
 import { SyncConfigWithLocalStorage } from "./_components/config-dialog/sync-config";
+import { Providers } from "./_components/font-provider";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -31,11 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} font-geist-sans font-medium ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Providers>
           {children}
           <ConfigDialog />
           <SyncConfigWithLocalStorage />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

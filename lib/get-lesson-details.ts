@@ -34,7 +34,7 @@ export function getLessonDetails(): LessonDetails | null | undefined {
     // Check if the current time is during a lesson
     if (nowMs > lessonStartMs && nowMs < lessonEndMs) {
       const timeLeftMs = lessonEndMs - nowMs;
-      const timeLeftRounded = Math.floor(timeLeftMs / 1000) * 1000;
+      const timeLeftRounded = Math.ceil(timeLeftMs / 1000) * 1000;
 
       return {
         type: "lesson",
@@ -54,7 +54,7 @@ export function getLessonDetails(): LessonDetails | null | undefined {
 
       if (nowMs > breakStartMs && nowMs < breakEndMs) {
         const timeLeftMs = breakEndMs - nowMs;
-        const timeLeftRounded = Math.floor(timeLeftMs / 1000) * 1000;
+        const timeLeftRounded = Math.ceil(timeLeftMs / 1000) * 1000;
 
         return {
           type: "break",

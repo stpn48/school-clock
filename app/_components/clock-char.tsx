@@ -1,5 +1,6 @@
 "use client";
 
+import { useConfigStore } from "@/hooks/zustand/use-config-store";
 import { motion } from "motion/react";
 import React from "react";
 
@@ -9,9 +10,11 @@ type Props = {
 };
 
 export function ClockChar({ char, isLast }: Props) {
+  const { config } = useConfigStore();
+
   return (
     <motion.div
-      className={`${isLast && "w-[110px]"} font-geist-sans text-[150px] font-bold`}
+      className={`${isLast && "w-[110px]"} text-[150px] font-bold`}
       key={char}
       initial={{ opacity: 0, y: 20 }}
       animate={{ y: 0, opacity: 1 }}
