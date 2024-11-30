@@ -17,7 +17,7 @@ const lessons = [
 ];
 
 // null if not in school time
-export function getLessonDetails(): LessonDetails | null {
+export function getLessonDetails(): LessonDetails | null | undefined {
   const nowMs = new Date().getTime(); // TODO: Remove this currently simulating time
 
   // beyond school time
@@ -34,13 +34,14 @@ export function getLessonDetails(): LessonDetails | null {
     // Check if the current time is during a lesson
     if (nowMs > lessonStartMs && nowMs < lessonEndMs) {
       const timeLeftMs = lessonEndMs - nowMs;
+      const timeLeftRounded = Math.floor(timeLeftMs / 1000) * 1000;
 
       return {
         type: "lesson",
         lessonNumber: lessons[i].lessonNumber,
         lessonStartMs,
         lessonEndMs,
-        timeLeftMs,
+        timeLeftMs: timeLeftRounded,
       };
     }
 
@@ -53,13 +54,14 @@ export function getLessonDetails(): LessonDetails | null {
 
       if (nowMs > breakStartMs && nowMs < breakEndMs) {
         const timeLeftMs = breakEndMs - nowMs;
+        const timeLeftRounded = Math.floor(timeLeftMs / 1000) * 1000;
 
         return {
           type: "break",
           lessonNumber: i + 1,
           lessonEndMs: breakStartMs,
           lessonStartMs: breakEndMs,
-          timeLeftMs,
+          timeLeftMs: timeLeftRounded,
         };
       }
     }
@@ -67,5 +69,5 @@ export function getLessonDetails(): LessonDetails | null {
 
   // If we don't find a match
   console.error("Lesson details not found");
-  return null;
+  return undefined;
 }

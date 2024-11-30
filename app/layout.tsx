@@ -1,8 +1,8 @@
-import { ToggleThemeBtn } from "@/components/toggle-theme-btn";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
-import ConfigDialog from "./_components/config-dialong";
+import { ConfigDialog } from "./_components/config-dialog/config-dialog";
+import { SyncConfigWithLocalStorage } from "./_components/config-dialog/sync-config";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -34,6 +34,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <ConfigDialog />
+          <SyncConfigWithLocalStorage />
         </ThemeProvider>
       </body>
     </html>

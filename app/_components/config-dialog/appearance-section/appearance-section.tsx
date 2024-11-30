@@ -1,5 +1,9 @@
+"use client";
+
 import { Switch } from "@/components/ui/switch";
-import React from "react";
+import { useConfigStore } from "@/hooks/zustand/use-config-store";
+import { Config } from "@/types/types";
+import React, { useEffect, useState } from "react";
 import { ClockAnimationSelect } from "./clock-animation-select";
 import { FontSelect } from "./font-select";
 import { ProgressbarVariantSelect } from "./progress-bar-variant-select";
@@ -10,7 +14,7 @@ type Props = {};
 export function AppearanceSection({}: Props) {
   return (
     <div className="flex flex-col gap-5 text-sm">
-      <h2 className="text-xl">Appearance</h2>
+      <h2>Appearance</h2>
 
       <div className="flex items-center justify-between">
         <h3>font</h3>

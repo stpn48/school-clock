@@ -1,36 +1,15 @@
 "use client";
 
+import { useConfetti } from "@/hooks/use-confetti";
 import { useLessonTimeLeft } from "@/hooks/useLessonTimeLeft";
 import { formatTime } from "@/lib/format-time";
-import { getLessonDetails } from "@/lib/get-lesson-details";
-import { LessonDetails } from "@/types/types";
-import { useEffect, useState } from "react";
+import { Loader2 } from "lucide-react";
 import Confetti from "react-confetti";
 import { LessonProgressBar } from "./lesson-progress-bar";
 
 export function LessonEndTimer() {
-  const [lessonDetails, setLessonDetails] = useState<LessonDetails | null>(null);
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  const { timeLeftMs } = useLessonTimeLeft(lessonDetails, () => {
-    setLessonDetails(getLessonDetails());
-    setShowConfetti(true);
-  });
-
-  useEffect(() => {
-    const details = getLessonDetails();
-    setLessonDetails(details);
-  }, []);
-
-  useEffect(() => {
-    if (showConfetti) {
-      const timeout = setTimeout(() => {
-        setShowConfetti(false);
-      }, 5000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [showConfetti]);
+  const { showConfetti, setShowConfetti } = useConfetti();
+  const { lessonDetails, timeLeftMs } = useLessonTimeLeft(setShowConfetti);
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -45,7 +24,8 @@ export function LessonEndTimer() {
             <span>{formatTime(timeLeftMs)}</span>
           </>
         )}
-        {!lessonDetails && <span>school is over for today 🎉</span>}
+        {lessonDetails === null && <span>school is over for today 🎉</span>}
+        {lessonDetails === undefined && <Loader2 className="size-4 animate-spin" />}
       </div>
     </div>
   );
