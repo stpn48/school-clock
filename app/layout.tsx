@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Providers } from "../components/providers";
 import { ConfigDialog } from "./_components/config-dialog/config-dialog";
 import { SyncConfigWithLocalStorage } from "./_components/config-dialog/sync-config";
-import { Providers } from "./_components/font-provider";
 import "./globals.css";
+
+const helveticaNeueLtStd = localFont({
+  src: "./fonts/HelveticaNeueLTStd.otf",
+  variable: "--font-helvetica-neue-lt-std",
+  weight: "100 900",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} font-geist-sans font-medium ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${helveticaNeueLtStd.variable} font-geist-sans font-medium ${geistMono.variable} antialiased`}
       >
         <Providers>
           {children}

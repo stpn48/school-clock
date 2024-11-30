@@ -7,13 +7,14 @@ type Store = {
 };
 export const useConfigStore = create<Store>((set) => ({
   config: {
-    font: "sans",
+    font: "font-geist-sans",
     clockAnimation: "default",
     progressBarVariant: "default",
     showProgressBar: true,
     showLessonNumber: true,
     showLessonEndCountdown: true,
     isFetched: false,
+    showSeconds: true,
   },
   setConfig: (config) => set({ config }),
 }));

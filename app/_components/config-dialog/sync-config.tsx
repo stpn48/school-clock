@@ -8,27 +8,16 @@ export function SyncConfigWithLocalStorage() {
   const { config, setConfig } = useConfigStore();
 
   useEffect(() => {
-    const config = window.localStorage.getItem("config");
+    const configFromStorage = window.localStorage.getItem("config");
 
     // if there is no config set the default
-    if (config === null) {
-      window.localStorage.setItem(
-        "config",
-        JSON.stringify({
-          font: "sans",
-          clockAnimation: "default",
-          progressBarVariant: "default",
-          showProgressBar: true,
-          showLessonNumber: true,
-          showLessonEndCountdown: true,
-          isFetched: false,
-        }),
-      );
+    if (configFromStorage === null) {
+      window.localStorage.setItem("config", JSON.stringify(config));
     }
 
     // config found, parse it and set it
-    if (config) {
-      const configParsed = JSON.parse(config) as Config;
+    if (configFromStorage) {
+      const configParsed = JSON.parse(configFromStorage) as Config;
       configParsed.isFetched = true;
       setConfig(configParsed);
     }

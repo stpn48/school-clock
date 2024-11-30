@@ -20,7 +20,7 @@ export function LessonProgressBar({ timeLeftMs }: Props) {
       <div className="absolute inset-0 h-screen w-screen">
         <div
           style={{ width: `${progress}%` }}
-          className="h-screen bg-primary-foreground mix-blend-difference"
+          className="h-screen bg-foreground mix-blend-difference"
         />
       </div>
     );

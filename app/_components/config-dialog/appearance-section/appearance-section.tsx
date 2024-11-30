@@ -61,6 +61,14 @@ export function AppearanceSection({}: Props) {
           }
         />
       </div>
+
+      <div className="mt-2 flex items-center justify-between">
+        <h3>show seconds</h3>
+        <Switch
+          checked={config.showSeconds}
+          onClick={() => setConfig({ ...config, showSeconds: !config.showSeconds })}
+        />
+      </div>
     </div>
   );
 }

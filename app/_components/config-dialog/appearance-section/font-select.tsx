@@ -13,7 +13,7 @@ import { useCallback } from "react";
 export function FontSelect() {
   const { config, setConfig } = useConfigStore();
 
-  const handleChange = useCallback((value: "sans" | "mono") => {
+  const handleChange = useCallback((value: typeof config.font) => {
     setConfig({ ...config, font: value });
   }, []);
 
@@ -23,8 +23,9 @@ export function FontSelect() {
         <SelectValue placeholder="Choose font" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="sans">Sans</SelectItem>
-        <SelectItem value="mono">Mono</SelectItem>
+        <SelectItem value="font-geist-sans">Geist Sans</SelectItem>
+        <SelectItem value="font-geist-mono">Geist Mono</SelectItem>
+        <SelectItem value="font-helvetica-neue-lt-std">Helvetica Neue LT Std</SelectItem>
       </SelectContent>
     </Select>
   );

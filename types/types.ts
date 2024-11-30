@@ -7,11 +7,12 @@ export type LessonDetails = {
 };
 
 export type Config = {
-  font: "sans" | "mono";
+  font: "font-geist-sans" | "font-geist-mono" | "font-helvetica-neue-lt-std";
   clockAnimation: "default" | "reverse" | "random"; //TODO: Rename
   progressBarVariant: "default" | "background" | "text"; //TODO: Rename
   showProgressBar: boolean;
   showLessonNumber: boolean;
   showLessonEndCountdown: boolean;
+  showSeconds: boolean;
   isFetched: boolean;
 };
