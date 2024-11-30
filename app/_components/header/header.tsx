@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogContent,
@@ -5,14 +7,24 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useUserActivity } from "@/hooks/use-user-activity";
+import clsx from "clsx";
 import { Settings } from "lucide-react";
+import { useActionState } from "react";
 import { AppearanceSection } from "../config-dialog/appearance-section/appearance-section";
 import { MaximizeBtn } from "./maximize-btn";
 
 export function Header() {
+  const { isActive } = useUserActivity();
+
   return (
     <Dialog>
-      <div className="fixed inset-0 flex h-12 w-full items-center bg-background px-[24px]">
+      <div
+        className={clsx(
+          "fixed inset-0 flex h-12 w-full items-center bg-background px-[24px] transition-opacity",
+          !isActive && "opacity-0",
+        )}
+      >
         <div className="flex-1" />
         <ul className="flex items-center gap-4">
           <li>
