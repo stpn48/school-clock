@@ -1,3 +1,4 @@
+import { useConfigStore } from "@/hooks/zustand/use-config-store";
 import React, { useEffect, useState } from "react";
 
 type Props = {
@@ -5,6 +6,7 @@ type Props = {
 };
 
 export function LessonProgressBar({ timeLeftMs }: Props) {
+  const { config } = useConfigStore();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -12,6 +14,17 @@ export function LessonProgressBar({ timeLeftMs }: Props) {
     const progress = ((totalLessonDurationMs - timeLeftMs) / totalLessonDurationMs) * 100;
     setProgress(progress);
   }, [timeLeftMs]);
+
+  if (config.progressBarVariant === "background") {
+    return (
+      <div className="absolute inset-0 h-screen w-screen">
+        <div
+          style={{ width: `${progress}%` }}
+          className="h-screen bg-primary-foreground mix-blend-difference"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="absolute bottom-0 h-[3px] w-screen bg-secondary">

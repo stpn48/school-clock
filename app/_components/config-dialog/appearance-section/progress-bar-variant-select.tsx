@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Select,
   SelectContent,
@@ -5,17 +7,25 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useConfigStore } from "@/hooks/zustand/use-config-store";
 
 export function ProgressbarVariantSelect() {
+  const { config, setConfig } = useConfigStore();
+
   return (
-    <Select>
+    <Select
+      value={config.progressBarVariant}
+      onValueChange={(value: typeof config.progressBarVariant) =>
+        setConfig({ ...config, progressBarVariant: value })
+      }
+    >
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Choose variant" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="text">In Text</SelectItem>
+        <SelectItem value="default">Default</SelectItem>
         <SelectItem value="background">Background</SelectItem>
-        <SelectItem value="bottom">On Bottom</SelectItem>
+        <SelectItem value="text">In Text</SelectItem>
       </SelectContent>
     </Select>
   );

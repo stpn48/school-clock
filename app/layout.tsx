@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
 import { ConfigDialog } from "./_components/config-dialog/config-dialog";
 import { SyncConfigWithLocalStorage } from "./_components/config-dialog/sync-config";
