@@ -4,7 +4,7 @@ import { useUserActivity } from "@/hooks/use-user-activity";
 import clsx from "clsx";
 import { MaximizeBtn } from "./maximize-btn";
 import { SettingsDialog } from "./settings-dialog";
-import { TimetableBtn } from "./timetable-btn";
+import { TimeTableDialog } from "./timetable-dialog";
 
 export function Header() {
   const { isActive } = useUserActivity();
@@ -20,7 +20,7 @@ export function Header() {
 
       <ul className="flex items-center gap-4">
         <li>
-          <TimetableBtn />
+          <TimeTableDialog />
         </li>
 
         <li>
