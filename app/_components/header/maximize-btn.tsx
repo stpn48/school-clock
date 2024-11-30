@@ -1,5 +1,6 @@
 "use client";
 
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Maximize } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -38,10 +39,19 @@ export function MaximizeBtn() {
   }, []);
 
   return (
-    <Maximize
-      onClick={handleClick}
-      className={`size-4 cursor-pointer text-foreground`}
-      aria-label={fullscreenActive ? "Exit fullscreen" : "Enter fullscreen"}
-    />
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Maximize
+            onClick={handleClick}
+            className={`size-4 cursor-pointer text-foreground`}
+            aria-label={fullscreenActive ? "Exit fullscreen" : "Enter fullscreen"}
+          />
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Maximize / Minimize</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
