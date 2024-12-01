@@ -19,7 +19,7 @@ export function LessonEndTimer() {
     <div className="flex flex-col items-center gap-4">
       {showConfetti && <Confetti recycle={false} />}
 
-      {config.showProgressBar && <LessonProgressBar />}
+      <LessonProgressBar />
 
       <div>
         {lessonDetails && (

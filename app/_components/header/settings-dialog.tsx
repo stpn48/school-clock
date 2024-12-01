@@ -31,6 +31,7 @@ export function SettingsDialog() {
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
         </DialogHeader>
+
         <AppearanceSection />
       </DialogContent>
     </Dialog>

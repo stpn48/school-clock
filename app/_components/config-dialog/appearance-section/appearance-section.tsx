@@ -35,14 +35,6 @@ export function AppearanceSection() {
       </div>
 
       <div className="mt-2 flex items-center justify-between">
-        <h3>show progress bar</h3>
-        <Switch
-          checked={config.showProgressBar}
-          onClick={() => setConfig({ ...config, showProgressBar: !config.showProgressBar })}
-        />
-      </div>
-
-      <div className="mt-2 flex items-center justify-between">
         <h3>show lesson number </h3>
         <Switch
           checked={config.showLessonNumber}
