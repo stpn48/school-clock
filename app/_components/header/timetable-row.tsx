@@ -19,7 +19,7 @@ export function TimetableRow({ row, isCurrDay }: Props) {
   }, []);
 
   return (
-    <div className="grid grid-cols-9 gap-0">
+    <div className="grid max-w-[900px] grid-cols-9 gap-0 border-b border-border bg-background first:rounded-t-sm last:rounded-b-sm last:border-b-0">
       {row.map((name, i) => (
         <TimetableCell
           key={i}

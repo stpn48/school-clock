@@ -23,10 +23,12 @@ export function Timetable() {
   console.log(currDay);
 
   return (
-    <div className="grid grid-cols-1 grid-rows-5 gap-0">
-      {timetable.map((row, i) => (
-        <TimetableRow key={i} row={row} isCurrDay={currDay === i + 1} />
-      ))}
+    <div className="flex h-full w-full justify-center">
+      <div className="grid max-w-[900px] flex-grow grid-rows-5 rounded-sm border border-border">
+        {timetable.map((row, i) => (
+          <TimetableRow key={i} row={row} isCurrDay={currDay === i + 1} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { CalendarRange } from "lucide-react";
 import { Timetable } from "./timetable";
 
@@ -25,10 +26,12 @@ export function TimeTableDialog() {
         </Tooltip>
       </TooltipProvider>
 
-      <DialogContent className="max-w-[80%]">
-        <DialogHeader>
-          <DialogTitle>Timetable</DialogTitle>
-        </DialogHeader>
+      <DialogContent hideX className="max-w-[900px] border-none bg-transparent">
+        <VisuallyHidden>
+          <DialogHeader>
+            <DialogTitle className="flex w-full justify-center">Timetable</DialogTitle>
+          </DialogHeader>
+        </VisuallyHidden>
 
         <Timetable />
       </DialogContent>
