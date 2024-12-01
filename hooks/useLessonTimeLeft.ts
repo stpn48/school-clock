@@ -7,10 +7,13 @@ export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boole
   const [timeLeftMs, setTimeLeftMs] = useState(0);
 
   const handleTimerEnd = useCallback(() => {
-    setShowConfetti(true);
+    if (lessonDetails?.type === "lesson") {
+      setShowConfetti(true);
+    }
+
     const newDetails = getLessonDetails();
     setLessonDetails(newDetails);
-  }, []);
+  }, [lessonDetails]);
 
   // get details on mount
   useEffect(() => {
@@ -23,7 +26,6 @@ export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boole
       return;
     }
 
-    console.log("LessonDetails", lessonDetails);
     setTimeLeftMs(lessonDetails.timeLeftMs);
 
     const interval = setInterval(() => {
