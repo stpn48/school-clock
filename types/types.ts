@@ -7,7 +7,7 @@ export type LessonDetails = {
 };
 
 export type Config = {
-  font: "font-geist-sans" | "font-geist-mono" | "font-spline-sans-mono";
+  font: "font-geist-sans" | "font-geist-mono" | "font-spline-sans-mono" | "font-pt-serif";
   clockAnimation: "default" | "reverse" | "random"; //TODO: Rename
   progressBarVariant: "default" | "background" | "text";
   showProgressBar: boolean;

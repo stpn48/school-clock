@@ -6,7 +6,9 @@
 [x] - don't show confetti when break ends
 [] - add the clock animations
 [] - add more themes
-[] - rework fonts
+[x] - rework fonts
 [x] - fix progress bar background animation
 [x] - move the show progress bar option to the select as an off option
 [] - allow only mono fonts when the progress bar variant is text
+[] - add glow option to the clock
+[] - add shadow option to the clock

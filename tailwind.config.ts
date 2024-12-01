@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        "pt-serif": ["var(--font-pt-serif)"],
         "spline-sans-mono": ["var(--font-spline-sans-mono)"],
         "geist-sans": ["var(--font-geist-sans)"],
         "geist-mono": ["var(--font-geist-mono)"],

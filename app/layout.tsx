@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Spline_Sans_Mono } from "next/font/google";
+import { PT_Serif, Spline_Sans_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Providers } from "../components/providers";
 import { SyncConfigWithLocalStorage } from "./_components/config-dialog/sync-config";
 import { Header } from "./_components/header/header";
 import "./globals.css";
+
+const ptSerif = PT_Serif({
+  variable: "--font-pt-serif",
+  weight: ["400", "700"],
+  style: "normal",
+});
 
 const splineSansMono = Spline_Sans_Mono({
   variable: "--font-spline-sans-mono",
@@ -36,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${splineSansMono.variable} font-geist-sans font-medium ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${ptSerif.variable} ${splineSansMono.variable} font-geist-sans font-medium ${geistMono.variable} antialiased`}
       >
         <Providers>
           <Header />
