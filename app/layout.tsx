@@ -9,12 +9,14 @@ import "./globals.css";
 const ptSerif = PT_Serif({
   variable: "--font-pt-serif",
   weight: ["400", "700"],
+  subsets: ["latin"],
   style: "normal",
 });
 
 const splineSansMono = Spline_Sans_Mono({
   variable: "--font-spline-sans-mono",
   weight: ["300", "700"],
+  subsets: ["latin"],
   style: "normal",
 });
 
