@@ -18,14 +18,16 @@ export function LessonProgressBar({}: Props) {
   if (config.progressBarVariant === "background") {
     return (
       <div className="pointer-events-none absolute inset-0 h-screen w-screen">
-        <div style={{ width: `${progress}%` }} className="h-screen rounded-md bg-foreground/10" />
+        <div style={{ width: `${progress}%` }} className="h-screen bg-foreground/10" />
       </div>
     );
   }
 
-  return (
-    <div className="absolute bottom-0 h-[3px] w-screen bg-secondary">
-      <div style={{ width: `${progress}%` }} className="h-full rounded-md bg-foreground" />
-    </div>
-  );
+  if (config.progressBarVariant === "default") {
+    return (
+      <div className="absolute bottom-0 h-[3px] w-screen bg-secondary">
+        <div style={{ width: `${progress}%` }} className="h-full bg-foreground" />
+      </div>
+    );
+  }
 }

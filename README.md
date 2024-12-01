@@ -9,3 +9,4 @@
 [] - rework fonts
 [x] - fix progress bar background animation
 [] - move the show progress bar option to the select as an off option
+[] - allow only mono fonts when the progress bar variant is text

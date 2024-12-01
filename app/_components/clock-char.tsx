@@ -9,8 +9,6 @@ type Props = {
 };
 
 export function ClockChar({ char, isLast }: Props) {
-  const { config } = useConfigStore();
-
   return (
     <motion.div
       className={`${isLast && "w-[110px]"} text-[150px] font-bold`}

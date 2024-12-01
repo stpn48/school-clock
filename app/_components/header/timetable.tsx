@@ -9,8 +9,8 @@ type Props = {
 };
 
 export function Timetable({ timetable, currWeekIsEven, isEven }: Props) {
-  // const currDay = new Date().getDay();
-  const currDay = 1;
+  const currDay = new Date().getDay();
+  // const currDay = 1;
 
   const isCurrWeek = currWeekIsEven === isEven;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTimeLeft } from "@/hooks/zustand/use-time-left";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 import { ClockChar } from "./clock-char";
 
@@ -22,17 +22,22 @@ export function ProgressClock({ timeChars }: Props) {
   return (
     <div className="relative flex">
       <div
-        className="relative flex bg-black/10 bg-clip-text text-transparent"
+        className="relative flex bg-foreground/10 bg-clip-text text-transparent"
         style={{
-          backgroundImage: `linear-gradient(to right, black, black)`,
+          backgroundImage: `linear-gradient(to right, hsl(var(--foreground)), hsl(var(--foreground))`,
           backgroundSize: progress + "%",
           backgroundRepeat: "no-repeat",
         }}
       >
         {timeChars.map((char, index) => (
-          <AnimatePresence key={index}>
-            <ClockChar char={char} isLast={index === 7} />
-          </AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-[150px] font-bold text-transparent"
+            key={index}
+          >
+            {char}
+          </motion.div>
         ))}
       </div>
     </div>
