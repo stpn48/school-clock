@@ -1,12 +1,12 @@
 import { useConfigStore } from "@/hooks/zustand/use-config-store";
+import { useTimeLeft } from "@/hooks/zustand/use-time-left";
 import React, { useEffect, useState } from "react";
 
-type Props = {
-  timeLeftMs: number;
-};
+type Props = {};
 
-export function LessonProgressBar({ timeLeftMs }: Props) {
+export function LessonProgressBar({}: Props) {
   const { config } = useConfigStore();
+  const { timeLeftMs } = useTimeLeft();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

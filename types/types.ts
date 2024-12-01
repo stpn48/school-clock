@@ -9,7 +9,7 @@ export type LessonDetails = {
 export type Config = {
   font: "font-geist-sans" | "font-geist-mono" | "font-helvetica-neue-lt-std";
   clockAnimation: "default" | "reverse" | "random"; //TODO: Rename
-  progressBarVariant: "default" | "background" | "text"; //TODO: Rename
+  progressBarVariant: "default" | "background" | "text";
   showProgressBar: boolean;
   showLessonNumber: boolean;
   showLessonEndCountdown: boolean;

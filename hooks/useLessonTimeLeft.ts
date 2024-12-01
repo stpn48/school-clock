@@ -1,10 +1,11 @@
 import { getLessonDetails } from "@/lib/get-lesson-details";
 import { LessonDetails } from "@/types/types";
 import { Dispatch, SetStateAction, useCallback, useEffect, useState } from "react";
+import { useTimeLeft } from "./zustand/use-time-left";
 
 export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boolean>>) {
   const [lessonDetails, setLessonDetails] = useState<LessonDetails | null | undefined>(undefined);
-  const [timeLeftMs, setTimeLeftMs] = useState(0);
+  const { timeLeftMs, setTimeLeftMs } = useTimeLeft();
 
   const handleTimerEnd = useCallback(() => {
     if (lessonDetails?.type === "lesson") {
@@ -44,5 +45,5 @@ export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boole
     };
   }, [lessonDetails]);
 
-  return { timeLeftMs, lessonDetails };
+  return { lessonDetails };
 }

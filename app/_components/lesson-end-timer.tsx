@@ -3,6 +3,7 @@
 import { useConfetti } from "@/hooks/use-confetti";
 import { useLessonTimeLeft } from "@/hooks/useLessonTimeLeft";
 import { useConfigStore } from "@/hooks/zustand/use-config-store";
+import { useTimeLeft } from "@/hooks/zustand/use-time-left";
 import { formatTime } from "@/lib/format-time";
 import { Loader2 } from "lucide-react";
 import Confetti from "react-confetti";
@@ -11,13 +12,14 @@ import { LessonProgressBar } from "./lesson-progress-bar";
 export function LessonEndTimer() {
   const { config } = useConfigStore();
   const { showConfetti, setShowConfetti } = useConfetti();
-  const { lessonDetails, timeLeftMs } = useLessonTimeLeft(setShowConfetti);
+  const { lessonDetails } = useLessonTimeLeft(setShowConfetti);
+  const { timeLeftMs } = useTimeLeft();
 
   return (
     <div className="flex flex-col items-center gap-4">
       {showConfetti && <Confetti recycle={false} />}
 
-      {config.showProgressBar && <LessonProgressBar timeLeftMs={timeLeftMs} />}
+      {config.showProgressBar && <LessonProgressBar />}
 
       <div>
         {lessonDetails && (
