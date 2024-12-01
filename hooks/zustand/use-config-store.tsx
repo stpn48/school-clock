@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 type Store = {
   config: Config;
-  setConfig: (config: Config) => void;
+  setConfig: (config: Config | ((prev: Config) => Config)) => void;
 };
 export const useConfigStore = create<Store>((set) => ({
   config: {
@@ -16,5 +16,6 @@ export const useConfigStore = create<Store>((set) => ({
     isFetched: false,
     showSeconds: true,
   },
-  setConfig: (config) => set({ config }),
+  setConfig: (config) =>
+    set((state) => ({ config: typeof config === "function" ? config(state.config) : config })),
 }));

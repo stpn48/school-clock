@@ -1,9 +1,8 @@
 "use client";
 
 import { useConfigStore } from "@/hooks/zustand/use-config-store";
-import { useTimeLeft } from "@/hooks/zustand/use-time-left";
 import { AnimatePresence } from "motion/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ClockChar } from "./clock-char";
 import { ProgressClock } from "./progress-clock";
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { useConfigStore } from "@/hooks/zustand/use-config-store";
 import { motion } from "motion/react";
 
 type Props = {

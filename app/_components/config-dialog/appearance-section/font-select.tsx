@@ -14,7 +14,7 @@ export function FontSelect() {
   const { config, setConfig } = useConfigStore();
 
   const handleChange = useCallback((value: typeof config.font) => {
-    setConfig({ ...config, font: value });
+    setConfig((prev) => ({ ...prev, font: value }));
   }, []);
 
   return (

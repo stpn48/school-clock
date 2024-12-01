@@ -1,9 +1,8 @@
 "use client";
 
 import { useTimeLeft } from "@/hooks/zustand/use-time-left";
-import { AnimatePresence, motion } from "motion/react";
-import React, { useEffect, useState } from "react";
-import { ClockChar } from "./clock-char";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 type Props = {
   timeChars: string[];

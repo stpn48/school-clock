@@ -7,9 +7,7 @@ import { FontSelect } from "./font-select";
 import { ProgressbarVariantSelect } from "./progress-bar-variant-select";
 import { ThemeSelect } from "./theme-select";
 
-type Props = {};
-
-export function AppearanceSection({}: Props) {
+export function AppearanceSection() {
   const { config, setConfig } = useConfigStore();
 
   return (
