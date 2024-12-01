@@ -1,32 +1,24 @@
+"use client";
+
 import { TimetableRow } from "./timetable-row";
 
-const TimetableEven = [
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-];
+type Props = {
+  timetable: (string | null)[][];
+  currWeekIsEven: boolean | null;
+  isEven: boolean | null;
+};
 
-const TimetableOdd = [
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-];
+export function Timetable({ timetable, currWeekIsEven, isEven }: Props) {
+  // const currDay = new Date().getDay();
+  const currDay = 1;
 
-export function Timetable() {
-  const todayDate = new Date().getDate();
-  const timetable = todayDate % 2 === 0 ? TimetableEven : TimetableOdd;
-  const currDay = new Date().getDay();
-  console.log(currDay);
+  const isCurrWeek = currWeekIsEven === isEven;
 
   return (
-    <div className="flex h-full w-full justify-center">
+    <div className="flex h-full w-full items-center justify-center">
       <div className="grid max-w-[900px] flex-grow grid-rows-5 rounded-sm border border-border">
         {timetable.map((row, i) => (
-          <TimetableRow key={i} row={row} isCurrDay={currDay === i + 1} />
+          <TimetableRow key={i} row={row} isCurrDay={isCurrWeek && currDay === i + 1} />
         ))}
       </div>
     </div>

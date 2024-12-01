@@ -7,3 +7,4 @@
 [] - add the clock animations
 [] - add more themes
 [] - add more fonts
+[] - fix progress bar background animation

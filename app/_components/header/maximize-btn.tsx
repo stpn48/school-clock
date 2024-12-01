@@ -5,7 +5,13 @@ import { Maximize } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export function MaximizeBtn() {
-  const [fullscreenActive, setFullscreenActive] = useState(!!document.fullscreenElement);
+  const [fullscreenActive, setFullscreenActive] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setFullscreenActive(document.fullscreenElement !== null);
+    setIsMounted(true);
+  }, []);
 
   const handleClick = useCallback(() => {
     if (document.fullscreenElement) {
@@ -19,7 +25,9 @@ export function MaximizeBtn() {
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setFullscreenActive(!!document.fullscreenElement);
+      if (document) {
+        setFullscreenActive(document.fullscreenElement !== null);
+      }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -36,7 +44,11 @@ export function MaximizeBtn() {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
       window.removeEventListener("keypress", handleKeyDown);
     };
-  }, []);
+  }, [handleClick]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <TooltipProvider>
