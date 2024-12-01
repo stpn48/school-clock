@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "helvetica-neue-lt-std": ["var(--font-helvetica-neue-lt-std)"],
+        "spline-sans-mono": ["var(--font-spline-sans-mono)"],
         "geist-sans": ["var(--font-geist-sans)"],
         "geist-mono": ["var(--font-geist-mono)"],
       },

@@ -15,35 +15,35 @@ export function AppearanceSection() {
       <h2>Appearance</h2>
 
       <div className="flex items-center justify-between">
-        <h3>font</h3>
-        <FontSelect />
-      </div>
-
-      <div className="flex items-center justify-between">
-        <h3>theme</h3>
+        <h3>Theme</h3>
         <ThemeSelect />
       </div>
 
       <div className="flex items-center justify-between">
-        <h3>clock animation</h3>
+        <h3>Clock Font</h3>
+        <FontSelect />
+      </div>
+
+      <div className="flex items-center justify-between">
+        <h3>Clock Animation</h3>
         <ClockAnimationSelect />
       </div>
 
       <div className="flex items-center justify-between">
-        <h3>progress bar variant</h3>
+        <h3>Progress Bar Variant</h3>
         <ProgressbarVariantSelect />
       </div>
 
       <div className="mt-2 flex items-center justify-between">
-        <h3>show lesson number </h3>
+        <h3>Show Lesson Number </h3>
         <Switch
           checked={config.showLessonNumber}
           onClick={() => setConfig({ ...config, showLessonNumber: !config.showLessonNumber })}
         />
       </div>
 
-      <div className="mt-2 flex items-center justify-between">
-        <h3>show lesson end countdown </h3>
+      <div className="flex items-center justify-between">
+        <h3>Show Lesson Countdown </h3>
         <Switch
           checked={config.showLessonEndCountdown}
           onClick={() =>
@@ -52,8 +52,8 @@ export function AppearanceSection() {
         />
       </div>
 
-      <div className="mt-2 flex items-center justify-between">
-        <h3>show seconds</h3>
+      <div className="flex items-center justify-between">
+        <h3>Show Seconds</h3>
         <Switch
           checked={config.showSeconds}
           onClick={() => setConfig({ ...config, showSeconds: !config.showSeconds })}

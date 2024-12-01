@@ -22,11 +22,15 @@ export function Clock() {
   const timeChars = config.showSeconds ? time.split("") : time.slice(0, -3).split("");
 
   if (config.progressBarVariant === "text") {
-    return <ProgressClock timeChars={timeChars} />;
+    return (
+      <div className={`${config.font}`}>
+        <ProgressClock timeChars={timeChars} />;
+      </div>
+    );
   }
 
   return (
-    <div className="relative flex">
+    <div className={`${config.font} relative flex`}>
       {timeChars.map((char, index) => (
         <AnimatePresence key={index}>
           <ClockChar char={char} isLast={index === 7} />

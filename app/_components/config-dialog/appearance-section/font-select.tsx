@@ -25,7 +25,7 @@ export function FontSelect() {
       <SelectContent>
         <SelectItem value="font-geist-sans">Geist Sans</SelectItem>
         <SelectItem value="font-geist-mono">Geist Mono</SelectItem>
-        <SelectItem value="font-helvetica-neue-lt-std">Helvetica Neue LT Std</SelectItem>
+        <SelectItem value="font-spline-sans-mono">Spline Sans Mono</SelectItem>
       </SelectContent>
     </Select>
   );
