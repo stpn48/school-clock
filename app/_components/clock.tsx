@@ -24,7 +24,7 @@ export function Clock() {
   if (config.progressBarVariant === "text") {
     return (
       <div className={`${config.font}`}>
-        <ProgressClock timeChars={timeChars} />;
+        <ProgressClock timeChars={timeChars} />
       </div>
     );
   }
