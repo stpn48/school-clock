@@ -10,7 +10,7 @@ export const useConfigStore = create<Store>((set) => ({
     font: "font-geist-sans",
     clockAnimation: "default",
     progressBarVariant: "default",
-    showProgressBar: true,
+    showProgressBar: false,
     showLessonNumber: true,
     showLessonEndCountdown: true,
     isFetched: false,
