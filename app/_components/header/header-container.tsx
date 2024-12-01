@@ -10,7 +10,7 @@ export function HeaderContainer({ children }: PropsWithChildren) {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-20 flex h-12 w-full items-center bg-background px-[24px] transition-opacity",
+        "fixed inset-0 z-20 flex h-12 w-full items-center bg-transparent px-[24px] transition-opacity",
         !isActive && "opacity-0",
       )}
     >

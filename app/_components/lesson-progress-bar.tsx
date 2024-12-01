@@ -17,11 +17,8 @@ export function LessonProgressBar({ timeLeftMs }: Props) {
 
   if (config.progressBarVariant === "background") {
     return (
-      <div className="absolute inset-0 h-screen w-screen">
-        <div
-          style={{ width: `${progress}%` }}
-          className="h-screen bg-foreground mix-blend-difference"
-        />
+      <div className="pointer-events-none absolute inset-0 h-screen w-screen">
+        <div style={{ width: `${progress}%` }} className="h-screen rounded-md bg-foreground/10" />
       </div>
     );
   }

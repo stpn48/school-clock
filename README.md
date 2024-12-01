@@ -3,8 +3,8 @@
 [x] - make settings work
 [x] - add no school on weekends
 [] - implement the progress bars variants (as background, inside the text, and on the bottom)
-[] - don't show confetti when break ends
+[x] - don't show confetti when break ends
 [] - add the clock animations
 [] - add more themes
-[] - add more fonts
-[] - fix progress bar background animation
+[] - rework fonts
+[x] - fix progress bar background animation
