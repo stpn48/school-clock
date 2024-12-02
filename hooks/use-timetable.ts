@@ -18,7 +18,7 @@ const timetableOdd = [
 ];
 
 export function useTimetable() {
-  const [isEven, setIsEven] = useState<boolean | null>(null);
+  const [displayedTimetableIsEven, setIsEven] = useState<boolean | null>(null);
   const [currWeekIsEven, setCurrWeekIsEven] = useState<boolean | null>(null);
 
   const switchTimetable = useCallback(() => {
@@ -33,22 +33,22 @@ export function useTimetable() {
     // its weekend get the next week
     if (currDay === 0 || currDay === 6) {
       const nextWeekNumber = weekNumber + 1;
-      const isEven = nextWeekNumber % 2 === 0;
-      setIsEven(isEven);
-      setCurrWeekIsEven(isEven);
+      const displayedTimetableIsEven = nextWeekNumber % 2 === 0;
+      setIsEven(displayedTimetableIsEven);
+      setCurrWeekIsEven(displayedTimetableIsEven);
       return;
     }
 
     // its not weekend get the curr week
-    const isEven = weekNumber % 2 === 0;
-    setIsEven(isEven);
-    setCurrWeekIsEven(isEven);
+    const displayedTimetableIsEven = weekNumber % 2 === 0;
+    setIsEven(displayedTimetableIsEven);
+    setCurrWeekIsEven(displayedTimetableIsEven);
   }, []);
 
   return {
-    timetable: isEven ? timetableEven : timetableOdd,
+    timetable: displayedTimetableIsEven ? timetableEven : timetableOdd,
     switchTimetable,
-    isEven,
+    displayedTimetableIsEven,
     currWeekIsEven,
   };
 }

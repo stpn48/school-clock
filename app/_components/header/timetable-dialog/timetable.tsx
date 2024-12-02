@@ -5,14 +5,14 @@ import { TimetableRow } from "./timetable-row";
 type Props = {
   timetable: (string | null)[][];
   currWeekIsEven: boolean | null;
-  isEven: boolean | null;
+  displayedTimetableIsEven: boolean | null;
 };
 
-export function Timetable({ timetable, currWeekIsEven, isEven }: Props) {
+export function Timetable({ timetable, currWeekIsEven, displayedTimetableIsEven }: Props) {
   const currDay = new Date().getDay();
   // const currDay = 1;
 
-  const isCurrWeek = currWeekIsEven === isEven;
+  const isCurrWeek = currWeekIsEven === displayedTimetableIsEven;
 
   return (
     <div className="flex h-full w-full items-center justify-center">

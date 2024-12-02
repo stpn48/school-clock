@@ -1,7 +1,7 @@
 import { HeaderContainer } from "./header-container";
 import { MaximizeBtn } from "./maximize-btn";
 import { SettingsDialog } from "./settings-dialog";
-import { TimeTableDialog } from "./timetable-dialog";
+import { TimeTableDialog } from "./timetable-dialog/timetable-dialog";
 
 export function Header() {
   return (
