@@ -25,7 +25,7 @@ export function ProgressbarVariantSelect() {
       <SelectContent>
         <SelectItem value="default">Default</SelectItem>
         <SelectItem value="background">Background</SelectItem>
-        <SelectItem value="text">In Text</SelectItem>
+        <SelectItem value="text">In Text (experimental)</SelectItem>
         <SelectItem value="off">Off</SelectItem>
       </SelectContent>
     </Select>

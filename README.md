@@ -12,3 +12,4 @@
 [] - allow only mono fonts when the progress bar variant is text
 [] - add glow option to the clock
 [] - add shadow option to the clock
+[x] - improve timetable dialog
