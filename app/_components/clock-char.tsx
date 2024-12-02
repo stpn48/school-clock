@@ -10,7 +10,7 @@ type Props = {
 export function ClockChar({ char, isLast }: Props) {
   return (
     <motion.div
-      className={`${isLast && "w-[110px]"} text-[150px] font-bold`}
+      className={`${isLast && "w-[110px]"} text-[150px] font-bold text-primary`}
       key={char}
       initial={{ opacity: 0, y: 20 }}
       animate={{ y: 0, opacity: 1 }}

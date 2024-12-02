@@ -26,9 +26,13 @@ export function ThemeSelect() {
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Choose theme" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="max-h-[200px] overflow-auto">
         <SelectItem value="dark">Dark</SelectItem>
         <SelectItem value="light">Light</SelectItem>
+        <SelectItem value="YK7-blue">YK7-blue</SelectItem>
+        <SelectItem value="midnight-tokyo">Midnight Tokyo</SelectItem>
+        <SelectItem value="whipped-coral">Whipped Coral</SelectItem>
+        <SelectItem value="green-wean">Green Wean</SelectItem>
       </SelectContent>
     </Select>
   );

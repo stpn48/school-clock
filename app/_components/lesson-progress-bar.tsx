@@ -24,7 +24,7 @@ export function LessonProgressBar() {
   if (config.progressBarVariant === "default") {
     return (
       <div className="absolute bottom-0 h-[3px] w-screen bg-secondary">
-        <div style={{ width: `${progress}%` }} className="h-full bg-foreground" />
+        <div style={{ width: `${progress}%` }} className="h-full bg-primary" />
       </div>
     );
   }

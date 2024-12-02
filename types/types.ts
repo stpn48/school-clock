@@ -16,3 +16,5 @@ export type Config = {
   showSeconds: boolean;
   isFetched: boolean;
 };
+
+export type Themes = ["dark", "YK7-blue", "midnight-tokyo", "whipped-coral", "green-wean"];
