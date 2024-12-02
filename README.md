@@ -4,12 +4,11 @@
 [x] - add no school on weekends
 [x] - implement the progress bars variants (as background, inside the text, and on the bottom)
 [x] - don't show confetti when break ends
-[] - add the clock animations
-[] - add more themes
+[x] - add the clock animations
+[x] - add more themes
 [x] - rework fonts
 [x] - fix progress bar background animation
 [x] - move the show progress bar option to the select as an off option
 [] - allow only mono fonts when the progress bar variant is text
-[] - add glow option to the clock
-[] - add shadow option to the clock
 [x] - improve timetable dialog
+[] - add like a cheeky lil percent progress of the day (like when im in the middle of the school day its going to be 50%)
