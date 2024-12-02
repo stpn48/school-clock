@@ -1,3 +1,5 @@
+import { Target, Transition } from "motion/react";
+
 export type LessonDetails = {
   type: "lesson" | "break";
   lessonNumber: number;
@@ -18,3 +20,9 @@ export type Config = {
 };
 
 export type Themes = ["dark", "YK7-blue", "midnight-tokyo", "whipped-coral", "green-wean"];
+
+export type AnimationType = {
+  initial: Target;
+  animate: Target;
+  transition: Transition;
+};

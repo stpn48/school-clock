@@ -2,7 +2,6 @@
 
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useTimetable } from "@/hooks/use-timetable";
-import { CalendarRange, ChevronLeft, ChevronRight } from "lucide-react";
+import { CalendarRange } from "lucide-react";
 import { ChevronLeftButton } from "./chevron-left-button";
 import { ChevronRightButton } from "./chevron-right-button";
 import { Timetable } from "./timetable";

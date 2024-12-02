@@ -1,6 +1,7 @@
 "use client";
 
 import { useConfigStore } from "@/hooks/zustand/use-config-store";
+import { AnimationType } from "@/types/types";
 import { motion } from "motion/react";
 
 type Props = {
@@ -18,14 +19,7 @@ export function ClockChar({ char, isLast }: Props) {
     transition: { duration: 0.2, ease: "easeOut" },
   };
 
-  const animations: Record<
-    typeof config.clockAnimation,
-    {
-      initial: Record<string, any>;
-      animate: Record<string, any>;
-      transition: Record<string, any>;
-    }
-  > = {
+  const animations: Record<typeof config.clockAnimation, AnimationType> = {
     "land-in": {
       initial: { opacity: 0, y: -20 },
       animate: { opacity: 1, y: 0 },
