@@ -27,7 +27,7 @@ export function SettingsDialog() {
         </Tooltip>
       </TooltipProvider>
 
-      <DialogContent className="flex h-[75%] flex-col gap-4">
+      <DialogContent className="flex max-h-[75%] flex-col gap-4">
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
         </DialogHeader>
