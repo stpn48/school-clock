@@ -44,7 +44,7 @@ export function TimeTableDialog() {
 
       <DialogContent
         hideX
-        className={`flex max-w-[900px] items-center justify-center border-none p-0 outline-none`}
+        className={`flex max-w-[900px] items-center justify-center border-none bg-transparent p-0 outline-none`}
       >
         <VisuallyHidden>
           <DialogHeader>

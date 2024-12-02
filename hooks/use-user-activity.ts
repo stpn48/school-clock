@@ -9,7 +9,7 @@ export function useUserActivity() {
     const resetInactivityTimer = () => {
       setIsActive(true);
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => setIsActive(false), 3000);
+      timeoutId = setTimeout(() => setIsActive(false), 1700);
     };
 
     window.addEventListener("mousemove", resetInactivityTimer);
