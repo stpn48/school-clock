@@ -30,7 +30,7 @@ export function LessonEndTimer() {
               </span>
             )}
             {config.showLessonNumber && config.showLessonEndCountdown && " | "}
-            {config.showLessonEndCountdown && <span>{formatTime(timeLeftMs)}</span>}
+            {config.showLessonEndCountdown && <span>{timeLeftMs && formatTime(timeLeftMs)}</span>}
           </>
         )}
         {config.showLessonNumber && lessonDetails === null && (

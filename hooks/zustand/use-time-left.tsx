@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 type Store = {
-  timeLeftMs: number;
-  setTimeLeftMs: (timeLeft: number | ((prev: number) => number)) => void;
+  timeLeftMs: number | null;
+  setTimeLeftMs: (timeLeft: number | ((prev: number | null) => number | null)) => void;
 };
 export const useTimeLeft = create<Store>((set) => ({
-  timeLeftMs: 0,
+  timeLeftMs: null,
   setTimeLeftMs: (timeLeft) =>
     set((state) => ({
       timeLeftMs: typeof timeLeft === "function" ? timeLeft(state.timeLeftMs) : timeLeft,

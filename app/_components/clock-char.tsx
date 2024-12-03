@@ -33,7 +33,7 @@ export function ClockChar({ char, isLast }: Props) {
     },
     "flip-in": {
       initial: { opacity: 0, rotateX: -90 },
-      animate: { opacity: 1, rotateX: 0 },
+      animate: { opacity: 1, rotateX: 0, y: 0 },
       transition: { duration: 0.5, ease: "easeOut" },
     },
   };
