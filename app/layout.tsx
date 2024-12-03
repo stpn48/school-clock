@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { PT_Serif, Spline_Sans_Mono } from "next/font/google";
 import localFont from "next/font/local";
@@ -51,6 +52,8 @@ export default function RootLayout({
           {children}
           <SyncConfigWithLocalStorage />
         </Providers>
+
+        <Analytics />
       </body>
     </html>
   );
