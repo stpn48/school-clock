@@ -11,6 +11,7 @@ export const useConfigStore = create<Store>((set) => ({
     clockAnimation: "default",
     progressBarVariant: "default",
     showProgressBar: false,
+    showDayProgress: false,
     showLessonNumber: true,
     showLessonEndCountdown: true,
     isFetched: false,

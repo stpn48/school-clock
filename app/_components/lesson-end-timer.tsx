@@ -1,6 +1,7 @@
 "use client";
 
 import { useConfetti } from "@/hooks/use-confetti";
+import { useDayProgress } from "@/hooks/use-day-progress";
 import { useLessonTimeLeft } from "@/hooks/useLessonTimeLeft";
 import { useConfigStore } from "@/hooks/zustand/use-config-store";
 import { useTimeLeft } from "@/hooks/zustand/use-time-left";
@@ -13,7 +14,8 @@ export function LessonEndTimer() {
   const { config } = useConfigStore();
   const { showConfetti, setShowConfetti } = useConfetti();
   const { lessonDetails } = useLessonTimeLeft(setShowConfetti);
-  const { timeLeftMs } = useTimeLeft();
+  const { timeLeftMs, dayEndTimeMs } = useTimeLeft();
+  const { progress } = useDayProgress();
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -21,22 +23,25 @@ export function LessonEndTimer() {
 
       <LessonProgressBar />
 
-      <div>
-        {lessonDetails && (
-          <>
-            {config.showLessonNumber && (
-              <span>
-                {lessonDetails.type} {lessonDetails.lessonNumber}{" "}
-              </span>
-            )}
-            {config.showLessonNumber && config.showLessonEndCountdown && " | "}
-            {config.showLessonEndCountdown && <span>{timeLeftMs && formatTime(timeLeftMs)}</span>}
-          </>
-        )}
-        {config.showLessonNumber && lessonDetails === null && (
-          <span>school is over for today 🎉</span>
-        )}
-        {lessonDetails === undefined && <Loader2 className="size-4 animate-spin" />}
+      <div className="flex flex-col items-center gap-4">
+        <div>
+          {lessonDetails && (
+            <>
+              {config.showLessonNumber && (
+                <span>
+                  {lessonDetails.type} {lessonDetails.lessonNumber}{" "}
+                </span>
+              )}
+              {config.showLessonNumber && config.showLessonEndCountdown && " | "}
+              {config.showLessonEndCountdown && <span>{timeLeftMs && formatTime(timeLeftMs)}</span>}
+            </>
+          )}
+          {config.showLessonNumber && lessonDetails === null && (
+            <span>school is over for today 🎉</span>
+          )}
+          {lessonDetails === undefined && <Loader2 className="size-4 animate-spin" />}
+        </div>
+        {config.showDayProgress && <span>day progress {progress}%</span>}
       </div>
     </div>
   );

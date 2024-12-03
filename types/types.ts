@@ -14,6 +14,7 @@ export type Config = {
   progressBarVariant: "default" | "background" | "text";
   showProgressBar: boolean;
   showLessonNumber: boolean;
+  showDayProgress: boolean;
   showLessonEndCountdown: boolean;
   showSeconds: boolean;
   isFetched: boolean;

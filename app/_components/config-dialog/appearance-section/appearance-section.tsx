@@ -59,6 +59,14 @@ export function AppearanceSection() {
           onClick={() => setConfig({ ...config, showSeconds: !config.showSeconds })}
         />
       </div>
+
+      <div className="flex items-center justify-between">
+        <h3>Show Day Progress (experimental)</h3>
+        <Switch
+          checked={config.showDayProgress}
+          onClick={() => setConfig({ ...config, showDayProgress: !config.showDayProgress })}
+        />
+      </div>
     </div>
   );
 }

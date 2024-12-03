@@ -1,5 +1,9 @@
+import { getCurrDayEndTime } from "@/lib/get-curr-day-end-time";
 import { getISOWeek } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
+import { useTimeLeft } from "./zustand/use-time-left";
+
+// 55 minutes in ms
 
 const timetableEven = [
   ["OPS", "OPS", "OPS", "OPS", "WEB", "WEB", null, "WEB", "WEB"],
@@ -11,7 +15,7 @@ const timetableEven = [
 
 const timetableOdd = [
   ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
-  [null, "EK", "ČJM", "MA", "POS", "PGR", "EK", null, null],
+  ["", "EK", "ČJM", "MA", "POS", "PGR", "EK", null, null],
   ["ZIT", "ZIT", "MA", "ON", "ČJM", "MA", null, null, null],
   ["EK", "EK", "OPS", "ČJM", "POS", null, "PRG", "PRG", "PRG"],
   ["ROB", "ČJL", "ROB", "OPS", "ČJL", "MA", "ON", null, null],
@@ -20,6 +24,8 @@ const timetableOdd = [
 export function useTimetable() {
   const [displayedTimetableIsEven, setIsEven] = useState<boolean | null>(null);
   const [currWeekIsEven, setCurrWeekIsEven] = useState<boolean | null>(null);
+
+  const { setDayEndTimeMs } = useTimeLeft();
 
   const switchTimetable = useCallback(() => {
     setIsEven((prevIsEven) => !prevIsEven);
@@ -39,8 +45,8 @@ export function useTimetable() {
       return;
     }
 
-    // its not weekend get the curr week
-    const displayedTimetableIsEven = weekNumber % 2 === 0;
+    // its not weekend get curr day end time
+    getCurrDayEndTime(weekNumber, timetableEven, timetableOdd, currDay, setDayEndTimeMs);
     setIsEven(displayedTimetableIsEven);
     setCurrWeekIsEven(displayedTimetableIsEven);
   }, []);
