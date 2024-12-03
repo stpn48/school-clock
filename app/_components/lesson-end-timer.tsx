@@ -14,7 +14,7 @@ export function LessonEndTimer() {
   const { config } = useConfigStore();
   const { showConfetti, setShowConfetti } = useConfetti();
   const { lessonDetails } = useLessonTimeLeft(setShowConfetti);
-  const { timeLeftMs, dayEndTimeMs } = useTimeLeft();
+  const { timeLeftMs } = useTimeLeft();
   const { progress } = useDayProgress();
 
   return (
@@ -23,7 +23,7 @@ export function LessonEndTimer() {
 
       <LessonProgressBar />
 
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-8">
         <div>
           {lessonDetails && (
             <>
@@ -41,7 +41,7 @@ export function LessonEndTimer() {
           )}
           {lessonDetails === undefined && <Loader2 className="size-4 animate-spin" />}
         </div>
-        {config.showDayProgress && <span>day progress {progress}%</span>}
+        {config.showDayProgress && <span>day progress {progress.toFixed(0)}%</span>}
       </div>
     </div>
   );

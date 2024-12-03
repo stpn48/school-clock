@@ -16,7 +16,8 @@ export function useDayProgress() {
     const dayDuration = dayEndTimeMs - dayStartTimeMs;
 
     const calculateProgress = () => {
-      const now = new Date().getTime(); // Current time in ms
+      // const now = new Date().getTime(); // Current time in ms
+      const now = getTimestamp(9, 10) + 55000; // TODO: Remove this currently simulating time
       const progressMs = now - dayStartTimeMs; // Time passed since 7:50 AM
 
       // Calculate progress percentage
@@ -28,7 +29,7 @@ export function useDayProgress() {
     calculateProgress();
 
     // Update progress every 5 seconds
-    const interval = setInterval(calculateProgress, 5000);
+    const interval = setInterval(calculateProgress, 60000);
 
     // Clean up the interval on component unmount
     return () => {
