@@ -10,7 +10,7 @@ const timetableEven = [
 ];
 
 const timetableOdd = [
-  ["ZIT ", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
+  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
   [null, "EK", "ČJM", "MA", "POS", "PGR", "EK", null, null],
   ["ZIT", "ZIT", "MA", "ON", "ČJM", "MA", null, null, null],
   ["EK", "EK", "OPS", "ČJM", "POS", null, "PRG", "PRG", "PRG"],
