@@ -13,6 +13,10 @@ export function ProgressClock({ timeChars }: Props) {
   const { timeLeftMs } = useTimeLeft();
 
   useEffect(() => {
+    if (!timeLeftMs) {
+      return;
+    }
+
     const totalLessonDurationMs = 45 * 60 * 1000; // 45 minutes in milliseconds
     const progress = ((totalLessonDurationMs - timeLeftMs) / totalLessonDurationMs) * 100;
     setProgress(progress);

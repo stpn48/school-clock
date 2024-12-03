@@ -8,6 +8,10 @@ export function LessonProgressBar() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (!timeLeftMs) {
+      return;
+    }
+
     const totalLessonDurationMs = 45 * 60 * 1000; // 45 minutes in milliseconds
     const progress = ((totalLessonDurationMs - timeLeftMs) / totalLessonDurationMs) * 100;
     setProgress(progress);
