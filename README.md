@@ -11,5 +11,6 @@
 [x] - move the show progress bar option to the select as an off option
 [] - allow only mono fonts when the progress bar variant is text
 [x] - improve timetable dialog
-[] - add like a cheeky lil percent progress of the day (like when im in the middle of the school day its going to be 50%)
-[] - fix the time left counter not working when tabed out
+[x] - add like a cheeky lil percent progress of the day (like when im in the middle of the school day its going to be 50%)
+[x] - fix the time left counter not working when tabed out
+[] - fix timetable chevrons bug

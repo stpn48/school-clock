@@ -5,26 +5,19 @@ import { ChevronRight } from "lucide-react";
 import React from "react";
 
 type Props = {
+  isVisible: boolean;
   switchTimetable: () => void;
-  currWeekIsEven: boolean | null;
-  displayedTimetableIsEven: boolean | null;
 };
 
-export function ChevronRightButton({
-  switchTimetable,
-  currWeekIsEven,
-  displayedTimetableIsEven,
-}: Props) {
-  const isHidden = currWeekIsEven !== displayedTimetableIsEven;
-
+export function ChevronRightButton({ isVisible, switchTimetable }: Props) {
   return (
     <TooltipProvider delayDuration={200}>
       <Tooltip>
         <TooltipTrigger asChild>
           <button
-            tabIndex={isHidden ? 0 : 1}
+            tabIndex={isVisible ? 1 : 0}
             onClick={switchTimetable}
-            className={`${isHidden && "pointer-events-none opacity-0"} w-fit outline-none`}
+            className={`${!isVisible && "pointer-events-none opacity-0"} w-fit outline-none`}
           >
             <ChevronRight />
           </button>

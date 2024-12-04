@@ -4,26 +4,19 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ChevronLeft } from "lucide-react";
 
 type Props = {
+  isVisible: boolean;
   switchTimetable: () => void;
-  currWeekIsEven: boolean | null;
-  displayedTimetableIsEven: boolean | null;
 };
 
-export function ChevronLeftButton({
-  switchTimetable,
-  currWeekIsEven,
-  displayedTimetableIsEven,
-}: Props) {
-  const isHidden = currWeekIsEven === displayedTimetableIsEven;
-
+export function ChevronLeftButton({ isVisible, switchTimetable }: Props) {
   return (
     <TooltipProvider delayDuration={200}>
       <Tooltip>
         <TooltipTrigger asChild>
           <button
-            tabIndex={isHidden ? -1 : 1}
+            tabIndex={isVisible ? 1 : -1}
             onClick={switchTimetable}
-            className={`${isHidden && "pointer-events-none opacity-0"} w-fit outline-none`}
+            className={`${!isVisible && "pointer-events-none opacity-0"} w-fit outline-none`}
           >
             <ChevronLeft />
           </button>

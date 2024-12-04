@@ -39,16 +39,17 @@ export function useTimetable() {
     // its weekend get the next week
     if (currDay === 0 || currDay === 6) {
       const nextWeekNumber = weekNumber + 1;
-      const displayedTimetableIsEven = nextWeekNumber % 2 === 0;
-      setIsEven(displayedTimetableIsEven);
-      setCurrWeekIsEven(displayedTimetableIsEven);
+      const displayedTimetableEven = nextWeekNumber % 2 === 0;
+      setIsEven(displayedTimetableEven);
+      setCurrWeekIsEven(displayedTimetableEven);
       return;
     }
 
     // its not weekend get curr day end time
+    const displayedTimetableEven = weekNumber % 2 === 0;
     getCurrDayEndTime(weekNumber, timetableEven, timetableOdd, currDay, setDayEndTimeMs);
-    setIsEven(displayedTimetableIsEven);
-    setCurrWeekIsEven(displayedTimetableIsEven);
+    setIsEven(displayedTimetableEven);
+    setCurrWeekIsEven(displayedTimetableEven);
   }, []);
 
   return {

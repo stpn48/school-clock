@@ -54,9 +54,8 @@ export function TimeTableDialog() {
         </VisuallyHidden>
 
         <ChevronLeftButton
+          isVisible={currWeekIsEven !== displayedTimetableIsEven}
           switchTimetable={switchTimetable}
-          currWeekIsEven={currWeekIsEven}
-          displayedTimetableIsEven={displayedTimetableIsEven}
         />
 
         <Timetable
@@ -66,9 +65,8 @@ export function TimeTableDialog() {
         />
 
         <ChevronRightButton
+          isVisible={currWeekIsEven === displayedTimetableIsEven}
           switchTimetable={switchTimetable}
-          currWeekIsEven={currWeekIsEven}
-          displayedTimetableIsEven={displayedTimetableIsEven}
         />
       </DialogContent>
     </Dialog>
