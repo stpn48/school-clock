@@ -1,11 +1,9 @@
 import { getLessonDetails } from "@/lib/get-lesson-details";
-import { LessonDetails } from "@/types/types";
-import { Dispatch, SetStateAction, useCallback, useEffect, useState } from "react";
-import { useTimeLeft } from "./zustand/use-time-left";
+import { Dispatch, SetStateAction, useCallback, useEffect } from "react";
+import { useLessonDetails } from "./zustand/use-time-left";
 
 export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boolean>>) {
-  const [lessonDetails, setLessonDetails] = useState<LessonDetails | null | undefined>(undefined);
-  const { setTimeLeftMs } = useTimeLeft();
+  const { setTimeLeftMs, setLessonDetails, lessonDetails } = useLessonDetails();
 
   const handleTimerEnd = useCallback(() => {
     if (lessonDetails?.type === "lesson") {
@@ -40,7 +38,6 @@ export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boole
       const elapsedTime = now - startTime;
 
       const newTimeLeftMs = Math.max(lessonDetails.timeLeftMs - elapsedTime, 0);
-      console.log(newTimeLeftMs);
 
       // update every second
       if (now - lastUpdate >= 1000) {

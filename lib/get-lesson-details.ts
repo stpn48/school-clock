@@ -19,7 +19,7 @@ const lessons = [
 // null if not in school time
 export function getLessonDetails(): LessonDetails | null | undefined {
   const nowMs = new Date().getTime();
-  // const nowMs = getTimestamp(9, 10) + 55000; // TODO: Remove this currently simulating time
+  // const nowMs = getTimestamp(10, 10) + 55000;
 
   // beyond school time
   const lastLessonEndMs = getTimestamp(16, 0);
@@ -60,8 +60,8 @@ export function getLessonDetails(): LessonDetails | null | undefined {
         return {
           type: "break",
           lessonNumber: i + 1,
-          lessonEndMs: breakStartMs,
-          lessonStartMs: breakEndMs,
+          lessonEndMs: breakEndMs,
+          lessonStartMs: breakStartMs,
           timeLeftMs: timeLeftRounded,
         };
       }

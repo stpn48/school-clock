@@ -1,7 +1,7 @@
 import { getCurrDayEndTime } from "@/lib/get-curr-day-end-time";
 import { getISOWeek } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
-import { useTimeLeft } from "./zustand/use-time-left";
+import { useLessonDetails } from "./zustand/use-time-left";
 
 // 55 minutes in ms
 
@@ -25,7 +25,7 @@ export function useTimetable() {
   const [displayedTimetableIsEven, setIsEven] = useState<boolean | null>(null);
   const [currWeekIsEven, setCurrWeekIsEven] = useState<boolean | null>(null);
 
-  const { setDayEndTimeMs } = useTimeLeft();
+  const { setDayEndTimeMs } = useLessonDetails();
 
   const switchTimetable = useCallback(() => {
     setIsEven((prevIsEven) => !prevIsEven);

@@ -1,9 +1,9 @@
 import { getTimestamp } from "@/lib/get-timestamp";
 import { useEffect, useState } from "react";
-import { useTimeLeft } from "./zustand/use-time-left";
+import { useLessonDetails } from "./zustand/use-time-left";
 
 export function useDayProgress() {
-  const { dayEndTimeMs } = useTimeLeft();
+  const { dayEndTimeMs } = useLessonDetails();
 
   const [progress, setProgress] = useState(0);
 

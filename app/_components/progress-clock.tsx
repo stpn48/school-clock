@@ -1,6 +1,6 @@
 "use client";
 
-import { useTimeLeft } from "@/hooks/zustand/use-time-left";
+import { useLessonDetails } from "@/hooks/zustand/use-time-left";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -10,17 +10,17 @@ type Props = {
 
 export function ProgressClock({ timeChars }: Props) {
   const [progress, setProgress] = useState(0);
-  const { timeLeftMs } = useTimeLeft();
+  const { timeLeftMs, lessonDetails } = useLessonDetails();
 
   useEffect(() => {
-    if (!timeLeftMs) {
+    if (!timeLeftMs || !lessonDetails) {
       return;
     }
 
-    const totalLessonDurationMs = 45 * 60 * 1000; // 45 minutes in milliseconds
+    const totalLessonDurationMs = lessonDetails.lessonEndMs - lessonDetails.lessonStartMs; // 45 minutes in milliseconds
     const progress = ((totalLessonDurationMs - timeLeftMs) / totalLessonDurationMs) * 100;
     setProgress(progress);
-  }, [timeLeftMs]);
+  }, [timeLeftMs, lessonDetails]);
 
   return (
     <div className="relative flex">

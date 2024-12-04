@@ -1,3 +1,4 @@
+import { LessonDetails } from "@/types/types";
 import { create } from "zustand";
 
 type Store = {
@@ -6,8 +7,11 @@ type Store = {
 
   dayEndTimeMs: number | null;
   setDayEndTimeMs: (dayEndTimeMs: number | null) => void;
+
+  lessonDetails: LessonDetails | null | undefined;
+  setLessonDetails: (lessonDetails: LessonDetails | null | undefined) => void;
 };
-export const useTimeLeft = create<Store>((set) => ({
+export const useLessonDetails = create<Store>((set) => ({
   timeLeftMs: null,
   setTimeLeftMs: (timeLeft) =>
     set((state) => ({
@@ -16,4 +20,7 @@ export const useTimeLeft = create<Store>((set) => ({
 
   dayEndTimeMs: null,
   setDayEndTimeMs: (dayEndTimeMs) => set({ dayEndTimeMs }),
+
+  lessonDetails: undefined,
+  setLessonDetails: (lessonDetails) => set({ lessonDetails }),
 }));

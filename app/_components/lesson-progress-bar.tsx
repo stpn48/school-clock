@@ -1,21 +1,24 @@
+"use client";
+
 import { useConfigStore } from "@/hooks/zustand/use-config-store";
-import { useTimeLeft } from "@/hooks/zustand/use-time-left";
-import React, { useEffect, useState } from "react";
+import { useLessonDetails } from "@/hooks/zustand/use-time-left";
+import { useEffect, useState } from "react";
 
 export function LessonProgressBar() {
   const { config } = useConfigStore();
-  const { timeLeftMs } = useTimeLeft();
+  const { timeLeftMs, lessonDetails } = useLessonDetails();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (!timeLeftMs) {
+    if (!timeLeftMs || !lessonDetails) {
       return;
     }
 
-    const totalLessonDurationMs = 45 * 60 * 1000; // 45 minutes in milliseconds
+    const totalLessonDurationMs = lessonDetails.lessonEndMs - lessonDetails.lessonStartMs;
+
     const progress = ((totalLessonDurationMs - timeLeftMs) / totalLessonDurationMs) * 100;
     setProgress(progress);
-  }, [timeLeftMs]);
+  }, [timeLeftMs, lessonDetails]);
 
   if (config.progressBarVariant === "background") {
     return (
