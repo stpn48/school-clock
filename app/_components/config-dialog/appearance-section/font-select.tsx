@@ -23,10 +23,14 @@ export function FontSelect() {
         <SelectValue placeholder="Choose font" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="font-geist-sans">Geist Sans</SelectItem>
+        <SelectItem disabled={config.progressBarVariant === "text"} value="font-geist-sans">
+          Geist Sans
+        </SelectItem>
         <SelectItem value="font-geist-mono">Geist Mono</SelectItem>
         <SelectItem value="font-spline-sans-mono">Spline Sans Mono</SelectItem>
-        <SelectItem value="font-pt-serif">PT Serif</SelectItem>
+        <SelectItem disabled={config.progressBarVariant === "text"} value="font-pt-serif">
+          PT Serif
+        </SelectItem>
       </SelectContent>
     </Select>
   );

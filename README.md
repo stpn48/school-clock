@@ -13,4 +13,4 @@
 [x] - improve timetable dialog
 [x] - add like a cheeky lil percent progress of the day (like when im in the middle of the school day its going to be 50%)
 [x] - fix the time left counter not working when tabed out
-[] - fix timetable chevrons bug
+[x] - fix timetable chevrons bug
