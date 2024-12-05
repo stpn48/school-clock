@@ -61,7 +61,7 @@ export function AppearanceSection() {
       </div>
 
       <div className="flex items-center justify-between">
-        <h3>Show Day Progress (experimental)</h3>
+        <h3>Show Day Progress</h3>
         <Switch
           checked={config.showDayProgress}
           onClick={() => setConfig({ ...config, showDayProgress: !config.showDayProgress })}
