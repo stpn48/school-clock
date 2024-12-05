@@ -42,6 +42,8 @@ export function LessonEndTimer() {
           )}
           {lessonDetails === undefined && <Loader2 className="size-4 animate-spin" />}
         </div>
+
+        {/* day progress */}
         {config.showDayProgress && <span>day progress {progress.toFixed(0)}%</span>}
       </div>
     </div>

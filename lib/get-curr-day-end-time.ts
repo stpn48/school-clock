@@ -20,7 +20,7 @@ export function getCurrDayEndTime(
     curDayTimetable.filter((lesson) => lesson !== null).length - 4;
 
   const minDayEndMs = getTimestamp(11, 25); // 11:25 am
-  const dayEnds = minDayEndMs + currDayTimetableLengthAfterFourthLesson * TIMETABLE_DURATION_MS;
+  const dayEndsMs = minDayEndMs + currDayTimetableLengthAfterFourthLesson * TIMETABLE_DURATION_MS;
 
-  setDayEndTimeMs(dayEnds);
+  setDayEndTimeMs(dayEndsMs);
 }

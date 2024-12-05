@@ -6,18 +6,18 @@ import { useLessonDetails } from "./zustand/use-time-left";
 // 55 minutes in ms
 
 const timetableEven = [
-  ["OPS", "OPS", "OPS", "OPS", "WEB", "WEB", null, "WEB", "WEB"],
+  ["OPS", "OPS", "OPS", "OPS", "WEB", "WEB", "", "WEB", "WEB"],
   ["AJ", "AJ", "PGR", "POS", "ROB", null, null, null, null],
   ["PGR", "PGR", "AJ", "AJ", null, null, null, null, null],
-  ["AJ", "AJ", "ROB", "ROB", "ROB", null, "PRG", "PRG", "PRG"],
-  ["POS", "MA", "ČJL", "ZIT", null, "TV", "TV", null, null],
+  ["AJ", "AJ", "ROB", "ROB", "ROB", "", "PRG", "PRG", "PRG"],
+  ["POS", "MA", "ČJL", "ZIT", "", "TV", "TV", null, null],
 ];
 
 const timetableOdd = [
-  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", null, "WEB", "WEB"],
+  ["ZIT", "MA", "TV", "TV", "WEB", "WEB", "", "WEB", "WEB"],
   ["", "EK", "ČJM", "MA", "POS", "PGR", "EK", null, null],
   ["ZIT", "ZIT", "MA", "ON", "ČJM", "MA", null, null, null],
-  ["EK", "EK", "OPS", "ČJM", "POS", null, "PRG", "PRG", "PRG"],
+  ["EK", "EK", "OPS", "ČJM", "POS", "", "PRG", "PRG", "PRG"],
   ["ROB", "ČJL", "ROB", "OPS", "ČJL", "MA", "ON", null, null],
 ];
 
