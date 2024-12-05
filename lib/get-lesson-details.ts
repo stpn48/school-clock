@@ -17,13 +17,10 @@ const lessons = [
 ];
 
 // null if not in school time
-export function getLessonDetails(): LessonDetails | null | undefined {
+export function useGetLessonDetails(): LessonDetails | null | undefined {
   const nowMs = new Date().getTime();
-  // const nowMs = getTimestamp(10, 10) + 55000;
 
-  // beyond school time
-  const lastLessonEndMs = getTimestamp(16, 0);
-  if (nowMs > lastLessonEndMs) {
+  if (nowMs > getTimestamp(16, 0)) {
     return null;
   }
 

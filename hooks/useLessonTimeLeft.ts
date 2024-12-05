@@ -1,4 +1,6 @@
-import { getLessonDetails } from "@/lib/get-lesson-details";
+"use client";
+
+import { useGetLessonDetails } from "@/lib/get-lesson-details";
 import { Dispatch, SetStateAction, useCallback, useEffect } from "react";
 import { useLessonDetails } from "./zustand/use-time-left";
 
@@ -10,14 +12,13 @@ export function useLessonTimeLeft(setShowConfetti: Dispatch<SetStateAction<boole
       setShowConfetti(true);
     }
 
-    // lesson has ended, get new lesson details
-    const newDetails = getLessonDetails();
+    const newDetails = useGetLessonDetails();
     setLessonDetails(newDetails);
   }, [lessonDetails]);
 
   // get details on mount
   useEffect(() => {
-    const details = getLessonDetails();
+    const details = useGetLessonDetails();
     setLessonDetails(details);
   }, []);
 
