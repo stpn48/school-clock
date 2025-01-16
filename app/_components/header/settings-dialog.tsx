@@ -1,5 +1,6 @@
 "use client";
 
+import { GithubIcon } from "@/components/icons";
 import {
   Dialog,
   DialogContent,
@@ -10,7 +11,6 @@ import {
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Settings } from "lucide-react";
 import { AppearanceSection } from "../config-dialog/appearance-section/appearance-section";
-import { GithubIcon } from "@/components/icons";
 
 export function SettingsDialog() {
   return (
@@ -35,13 +35,13 @@ export function SettingsDialog() {
 
         <AppearanceSection />
 
-        <a
+        {/* <a
           className="mt-4 flex w-full justify-end"
           href="https://github.com/stpn48/school-clock"
           target="_blank"
         >
           <GithubIcon className="size-4" />
-        </a>
+        </a> */}
       </DialogContent>
     </Dialog>
   );
