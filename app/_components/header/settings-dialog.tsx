@@ -1,6 +1,5 @@
 "use client";
 
-import { GithubIcon } from "@/components/icons";
 import {
   Dialog,
   DialogContent,
